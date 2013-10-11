@@ -1,0 +1,23 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:gs="http://namespaces.zope.org/genericsetup"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="groundwire.register_form_recaptcha">
+
+  <gs:registerProfile
+    name="default"
+    title="Recaptcha for Registration Form"
+    directory="profiles/default"
+    description='Overrides the registration form with one protected by recaptcha.'
+    provides="Products.GenericSetup.interfaces.EXTENSION"
+    />
+
+  <browser:page
+    name="register"
+    for="plone.app.layout.navigation.interfaces.INavigationRoot"
+    class=".browser.RecaptchaRegistrationForm"
+    layer=".interfaces.IRegisterFormRecaptchaBrowserLayer"
+    permission="cmf.AddPortalMember"
+    />
+
+</configure>

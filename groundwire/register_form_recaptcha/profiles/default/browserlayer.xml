@@ -1,0 +1,4 @@
+<layers>
+    <layer name="groundwire.register_form_recaptcha" 
+           interface="groundwire.register_form_recaptcha.interfaces.IRegisterFormRecaptchaBrowserLayer" />
+</layers>
